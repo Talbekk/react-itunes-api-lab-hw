@@ -1,9 +1,10 @@
 import React from 'react'
 import { render } from '@testing-library/react'
 import ChartItem from './ChartItem'
+import './ChartList.css';
 
-const ChartList = ({data}) => {
-    const chartNodes = data.map(item =>{
+const ChartList = ({chart}) => {
+    const chartNodes = chart.map(item =>{
         return (
     <ChartItem title={item["im:name"].label} key={item.id}>{item["im:artist"].label}</ChartItem>
         )
@@ -14,7 +15,6 @@ const ChartList = ({data}) => {
             <ol>
                 {chartNodes}
             </ol>
-
         </div>
     )
 }
